@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Council of Woos Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #00ff00;
+            margin-bottom: 30px;
+        }
+        
+        .debug {
+            color: #00ff00;
+            font-family: monospace;
+            font-size: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .image-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            background-color: #ff0000; /* Red background to show if image fails */
+        }
+        
+        .image-title {
+            padding: 15px;
+            text-align: center;
+            color: #00ff00;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        
+        .error-msg {
+            color: #ff0000;
+            font-size: 10px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .image-container img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Council of Woos Gallery</h1>
+        <div class="debug">Diagnostic Mode - Check console for errors</div>
+        
+        <div class="gallery">
+            <div class="image-container">
+                <img src="fishie.png" alt="Fishie" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Fishie<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Fishie</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="gator.png" alt="Gator" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Gator<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Gator</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="couch-tour.png" alt="Couch Tour" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Couch Tour<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Couch Tour</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="han-tyumi.png" alt="Han Tyumi" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Han Tyumi<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Han Tyumi</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="soup4sale.png" alt="Soup for Sale" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Soup for Sale<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Soup for Sale</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="banana.png" alt="Banana" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Banana<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Banana</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="pig.png" alt="Pig" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Pig<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Pig</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="fishie-council.png" alt="Fishie Council" onerror="this.style.backgroundColor='#ff0000'; this.nextElementSibling.innerHTML='Fishie Council<br><span class=error-msg>Image failed to load</span>';">
+                <div class="image-title">Fishie Council</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('Page loaded, current location:', window.location.href);
+        console.log('Attempting to load images from relative paths...');
+    </script>
+</body>
+</html>
